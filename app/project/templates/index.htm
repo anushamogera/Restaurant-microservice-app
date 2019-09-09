@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Resturant Scraping Portal</title>
+		<!-- Bootstrap -->
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+		<!-- Google Web Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+		
+		<!-- Template CSS Files  -->
+		<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/owl.carousel.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/owl.transitions.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/owl.theme.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/datepicker.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		
+	</head>
+	<body>
+	<!-- Main Menu Starts -->
+		<nav id="nav" class="main-menu navbar flat">
+		<!-- Nested Container Starts -->
+			<div class="container">
+			<!-- Nav Header Starts -->
+				<div class="navbar-header">
+					<button type="button" class="btn btn-navbar navbar-toggle flat animation" data-toggle="collapse" data-target=".navbar-cat-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			<!-- Nav Header Ends -->
+			<!-- Navbar Cat collapse Starts -->
+				<div class="collapse navbar-collapse navbar-cat-collapse">
+					<ul class="nav navbar-nav text-uppercase text-bold">
+						<li><a href="/update_crawl">Update Data</a></li>
+						<li class="active"><a href="/">Menus</a></li>
+						<li><a href="/about">About Us</a></li>
+						
+					</ul>
+				</div>
+			<!-- Navbar Cat collapse Ends -->
+			</div>
+		<!-- Nested Container Ends -->
+		</nav>
+	<!-- Main Menu Ends -->
+	<!-- Search Section Starts -->
+		<section class="search-area condensed parallax">
+		<!-- Nested Container Starts -->
+			<div class="container text-center">
+				<h3 class="text-normal">Find the best Dish in Your Place</h3>
+				<form class="top-search">
+					<div class="input-group-md">
+						<div class="input-group-btn search-panel">
+							<button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown">
+								<span class="fa fa-map-marker"></span>
+								<span class="text-label">Search By</span> 
+								<span class="fa fa-angle-down"></span>
+							</button>
+						</div>
+						<div class="form-group">
+							<div class="icon-addon addon-lg">
+								<label class="fa fa-search"></label>
+								<input id="search-txt-box" type="text" class="form-control input-lg flat" name="search-location" placeholder="Search for a Dishes....,">
+							</div>
+						</div>
+						<span class="input-group-btn">
+							<button id="search-btn-box" class="btn btn-lg btn-secondary animation text-uppercase" type="button">Search</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		<!-- Nested Container Ends -->
+		</section>
+	<!-- Search Section Ends -->
+	<!-- Main Container Starts -->
+		<div class="main-container container">
+		<!-- Heading Starts -->
+			<h4 class="main-heading-1 text-center-sm text-center-xs">
+			</h4>
+		<!-- Heading Ends -->
+		<!-- Starts -->
+			<div class="row">
+			<!-- Sidearea Starts -->
+				<div class="col-md-3 col-sm-4 col-xs-12">
+				<!-- Sidearea Filters Starts -->
+					<div class="sidearea-filter">
+					<!-- Sort By Field Starts -->
+						<select id="sort_by" class="form-control flat sidearea-filter-sort">
+							<option value="price,asc">Sort by : Price Asc</option>
+							<option value="price,desc">Sort by : Price Desc</option>
+							<option value="name,asc">Sort by :Name Asc</option>
+							<option value="name,desc">Sort by :Name Desc</option>
+						</select>
+					<!-- Sort By Field Ends -->	
+					<!-- Filter By Restaurants Starts -->
+						<h6 class="sidearea-filter-title">Filter By Restaurants</h6>
+						<div class="sidearea-filter-checkbox-list resturant-filter-box">
+							<label class="checkbox">
+								<input type="checkbox" class="filter-by-resturant" value="all"> All
+							</label>
+						</div>
+					<!-- Filter By Restaurants Ends -->
+					<!-- Filter By Restaurants Starts -->
+						<h6 class="sidearea-filter-title">Filter By Type</h6>
+						<div class="sidearea-filter-checkbox-list">
+							<label class="checkbox">
+								<input type="checkbox" class="filter-by-type" value="all"> All
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" class="filter-by-type" value="website"> Website
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" class="filter-by-type" value="pdf"> pdf
+							</label>
+						</div>
+					<!-- Filter By Restaurants Ends -->
+					<!-- Filter By Cuisines Starts -->
+						<h6 class="sidearea-filter-title">Filter By Category</h6>
+						<div class="sidearea-filter-checkbox-list category-filter-box">
+							<label class="checkbox">
+								<input type="checkbox" class="filter-by-category" value="all"> All
+							</label>
+						</div>
+					<!-- Filter By Cuisines Ends -->
+					</div>
+				<!-- Sidearea Filters Ends -->
+				<!-- Spacer For Smaller Devices -->
+					<p class="visible-xs"><br></p>
+				<!-- Spacer For Smaller Ends -->
+				</div>
+			<!-- Sidearea Ends -->
+			<!-- Mainarea Starts -->
+				<div class="col-md-9 col-sm-8 col-xs-12">
+				<!-- Hotels List Starts -->
+					<div class="hotels-list text-center-sm text-center-xs">
+					{% for item in items %}
+						<div class="list-box clearfix">
+							<div class="pull-left-lg pull-left-md"></div>
+							<div class="pull-left-lg pull-left-md list-box-info">
+								<h5 class="list-box-info-title"><a href="#">{{item.name}}</a></h5>
+								<p class="list-unstyled list-inline list-box-info-tags">
+									{{item.description}}
+								</p>
+								<ul class="list-unstyled list-inline list-box-info-links">
+									<li><i class="fa fa-tag"></i> <a href="#">{{item.resturant}}</a></li>
+									<li><i class="fa fa-info-circle"></i> <a href="#">{{item.type}}</a></li>
+									<li><i class="fa fa-asterisk"></i> <a href="#">{{item.category}}</a></li>
+								</ul>
+							</div>
+							<div class="pull-right-lg pull-right-md right-col text-right text-center-sm text-center-xs">
+								<h6 class="sub-title">{{item.price}} € </h6>
+								<a href="#" data-name="{{item.name}}" class="btn btn-secondary animation compare-me">
+									Compare <i class="fa fa-chevron-right"></i>
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				<!-- Hotels List Ends -->
+				<!-- Pagination Starts -->
+					<!--<div class="pagination-block text-right text-center-xs">
+						<ul class="pagination animation">
+						  <li><a href="#">&laquo;</a></li>
+						  <li class="active"><a href="#">1</a></li>
+						  <li><a href="#">2</a></li>
+						  <li><a href="#">3</a></li>
+						  <li><a href="#">4</a></li>
+						  <li><a href="#">5</a></li>
+						  <li><a href="#">&raquo;</a></li>
+						</ul>
+					</div> -->
+				<!-- Pagination Ends -->
+				</div>
+			<!-- Mainarea Ends -->
+			</div>
+		<!-- Ends -->
+		</div>
+	<!-- Main Container Ends -->
+	<!-- Footer Area Starts -->
+		<footer class="main-footer">
+		<!-- Nested Container Starts -->
+			<div class="container">
+			<!-- Copyright Starts -->
+				<p class="copyright text-center">
+					All Rights Reserved &copy;
+				</p>
+			<!-- Copyright Ends -->
+			</div>
+		<!-- Nested Container Ends -->
+		</footer>
+	<!-- Footer Area Ends -->
+	<!-- Template JS Files -->
+	<script src={{ url_for('static', filename='js/jquery-1.11.3.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery-migrate-1.2.1.min.js') }}></script>	
+	<script src={{ url_for('static', filename='js/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/bootstrap-filestyle.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/bootstrap-datepicker.js') }}></script>
+	<script src={{ url_for('static', filename='js/owl.carousel.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/custom.js') }}></script>	
+	<script src={{ url_for('static', filename='js/main.js') }}></script>
+	</body>
+</html>

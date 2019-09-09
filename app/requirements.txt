@@ -1,0 +1,8 @@
+Flask
+Flask-WTF
+Jinja2
+Flask-DebugToolbar
+requests
+BeautifulSoup4
+xmltodict
+
